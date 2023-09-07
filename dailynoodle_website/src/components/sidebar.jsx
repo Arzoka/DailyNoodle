@@ -14,9 +14,14 @@ const SideBar = ({ takeOutItemId, Page }) => {
           {}
         );
         let current_data = response.data;
-        console.log(takeOutItemId);
         current_data.splice(takeOutItemId, 1);
-        console.log(current_data.length);
+        if (current_data.length > 3) {
+          let newdata = [];
+          for (let i = 0; i < current_data.length; i++) {
+            newdata.push(current_data[i]);
+          }
+          current_data = newdata;
+        }
         setData(current_data);
       } catch (error) {
         console.error("Error fetching data:", error);
