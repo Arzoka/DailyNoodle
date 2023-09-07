@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 header("Content-Type: application/json");
 
 
-    $conn = mysqli_connect("xxx", "xxx", "xxx", "xxx");
+    $conn = mysqli_connect("notuko-dailynoodledb.db.transip.me:3306", "notuko_admin", "Taiga250123!", "notuko_dailynoodledb");
 
     if ($conn) {
         mysqli_set_charset($conn, "utf8");
